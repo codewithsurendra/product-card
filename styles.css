@@ -1,0 +1,145 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Green500: hsl(158, 36%, 37%);
+    --Green700: hsl(158, 42%, 18%);
+    --Cream: hsl(32, 37%, 92%);
+    --Grey: hsl(228, 12%, 48%);
+
+    --font-highlight: 'Fraunces', serif;
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 56.3%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--Cream);
+    color: var(--Grey);
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#product-card-component {
+    max-width: 350px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    background-color: var(--White);
+    border-radius: 10px;
+    border: 1px solid var(--White);
+}
+
+.mobile-image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.desktop-image {
+    display: none;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.product-card {
+    padding: 2rem;
+}
+
+.product-heading {
+    color: hsl(212, 21%, 14%);
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-highlight);
+}
+
+.product-category {
+    margin: 1.2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.product-text {
+    margin: 1.5rem 0;
+    line-height: 1.8;
+}
+
+.product-rate {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.current-rate {
+    color: var(--Green500);
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: var(--font-highlight);
+}
+
+.previous-rate {
+    text-decoration: line-through;
+}
+
+.cta {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--Green500);
+    color: var(--White);
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cta:hover {
+    background-color: var(--Green700);
+}
+
+.cta::before {
+    content: "";
+    background-image: url(images/icon-cart.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+
+    html {
+        font-size: 62.5%;
+    }
+
+    .mobile-image {
+        display: none;
+    }
+
+    .desktop-image {
+        display: block;
+    }
+
+    #product-card-component {
+        grid-template-columns: 1fr 1fr;
+        max-width: 600px;
+    }
+
+}
+
+
